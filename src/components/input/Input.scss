@@ -1,0 +1,80 @@
+@use "../../styles" as *;
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+
+  &__label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    // color: $text-secondary;
+  }
+
+  &__required {
+    color: $color-danger;
+    margin-left: 0.25rem;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    button {
+      color: $color-brand-teal;
+      position: absolute;
+      right: 5%;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding: 1.0938rem 1rem;
+    border: 2px solid rgba(84, 95, 125, 0.15);
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    color: $color-neutral-500;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: $color-brand-teal;
+    }
+
+    &::placeholder {
+      color: $color-neutral-500;
+      opacity: 60%;
+    }
+
+    // &:disabled {
+    //   background-color: $gray-light;
+    //   cursor: not-allowed;
+    // }
+  }
+
+  &__helper-text {
+    font-size: 0.85rem;
+    color: darken($color-brand-blue, 20%);
+  }
+
+  &__error-text {
+    font-size: 0.85rem;
+    color: $color-danger;
+  }
+
+  &--error {
+    .input__field {
+      border-color: $color-danger;
+      box-shadow: 0 0 0 3px rgba($color-danger, 0.1);
+
+      &:focus {
+        border-color: darken($color-danger, 5%);
+      }
+    }
+  }
+}
