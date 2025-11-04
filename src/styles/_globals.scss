@@ -3,7 +3,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -16,11 +16,7 @@ html {
 }
 
 body {
-  //   font-family: $font-stack;
-  //   color: $text-color;
-  //   background-color: #fafafa;
-  //   line-height: 1.6;
-  //   min-height: 100vh;
+  font-family: $font-family-work-sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,5 +25,5 @@ body {
   width: 100%;
   //   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 16px;
 }
