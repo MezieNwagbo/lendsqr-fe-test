@@ -17,7 +17,22 @@
     margin-left: 0.25rem;
   }
 
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    button {
+      color: $color-brand-teal;
+      position: absolute;
+      right: 5%;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  }
+
   &__field {
+    width: 100%;
     padding: 1.0938rem 1rem;
     border: 2px solid rgba(84, 95, 125, 0.15);
     border-radius: 0.3125rem;

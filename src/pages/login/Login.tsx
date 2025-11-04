@@ -1,5 +1,5 @@
 import "./Login.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLogin } from "../../features/auth/hooks/useLogin";
 import logo from "../../assets/images/shared/logo_with_text.svg";
 
@@ -8,8 +8,10 @@ import { loginCopy } from "../../constants/loginCopy";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 
+import toast from "react-hot-toast";
+
 const Login = () => {
-  const { handleLogin, loading, error } = useLogin();
+  const { handleLogin, loading } = useLogin();
 
   const [email, setEmail] = useState({
     content: "",
@@ -40,6 +42,13 @@ const Login = () => {
 
     handleLogin({ email: email.content, password: password.content });
   };
+
+  useEffect(() => {
+    toast("Hi! Login with \nEmail: adedeji@lendsqr.com, \nPassword: test123", {
+      id: "welcome-toast",
+      duration: 7000,
+    });
+  }, []);
 
   return (
     <main className="login">

@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "./Input.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -21,9 +21,17 @@ const Input: React.FC<InputProps> = ({
   helperText,
   id,
   required,
+  type,
   ...rest
 }) => {
   const inputId = id || rest.name;
+
+  const [passwordType, setPasswordType] = useState(type);
+
+  const handleToggle = (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordType(passwordType === type ? "text" : type);
+  };
 
   return (
     <div className={`input ${error ? "input--error" : ""}`}>
@@ -33,7 +41,19 @@ const Input: React.FC<InputProps> = ({
         </label>
       )}
 
-      <input id={inputId} className="input__field" {...rest} />
+      <div className="input__wrapper">
+        <input
+          id={inputId}
+          className="input__field"
+          type={type === "password" ? passwordType : type}
+          {...rest}
+        ></input>
+        {type === "password" && (
+          <button onClick={handleToggle}>
+            {passwordType === "password" ? "SHOW" : "HIDE"}
+          </button>
+        )}
+      </div>
 
       {error ? (
         <p className="input__error-text">{error}</p>

@@ -107,7 +107,20 @@ body {
   color: #e4033b;
   margin-left: 0.25rem;
 }
+.input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input__wrapper button {
+  color: #39cdcc;
+  position: absolute;
+  right: 5%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
 .input__field {
+  width: 100%;
   padding: 1.0938rem 1rem;
   border: 2px solid rgba(84, 95, 125, 0.15);
   border-radius: 0.3125rem;

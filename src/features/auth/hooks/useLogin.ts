@@ -1,31 +1,29 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { login } from "../api/login";
 import type { LoginPayload, LoginResponse } from "../types/loginTypes";
 
+import toast from "react-hot-toast";
+
 export const useLogin = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (data: LoginPayload) => {
     setLoading(true);
-    setError(null);
 
     try {
       const response: LoginResponse = await login(data);
       console.log(response);
       localStorage.setItem("lendsqrAuth", JSON.stringify(response));
-      window.location.href = "/dashboard";
+      toast.success("Login successful! Redirecting...");
+      setTimeout(() => (window.location.href = "/dashboard"), 1200);
     } catch (err: any) {
-      console.log("error");
-
-      setError(err.message || "Something went wrong");
+      const message = err?.message || "Invalid email or password";
+      toast.error(message);
     } finally {
       setLoading(false);
     }
   };
 
-  return { handleLogin, loading, error };
+  return { handleLogin, loading };
 };

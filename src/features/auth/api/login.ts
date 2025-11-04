@@ -12,7 +12,11 @@ export async function login({
           user: { id: "1", name: "Adedeji Lendsqr" },
         });
       } else {
-        reject(new Error("Invalid credentials"));
+        reject(
+          new Error(
+            "Invalid credentials. Login with \nEmail: adedeji@lendsqr.com, \nPassword: test123"
+          )
+        );
       }
     }, 2000);
   });

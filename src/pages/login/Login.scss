@@ -68,13 +68,13 @@
     font-family: $font-family-inter;
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.625rem;
     color: $color-brand-blue;
   }
 
   &__subtitle {
     font-family: $font-family-inter;
-    margin-bottom: 2rem;
+    margin-bottom: 3.75rem;
     font-size: 20px;
     font-weight: 400;
     color: $color-neutral-500;
@@ -84,17 +84,18 @@
   &__form-body {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 
     a {
       color: $color-brand-teal;
       font-size: 0.75rem;
+      margin-bottom: 1.875rem;
     }
   }
 
   &__input-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
   }
 
   &__label {
