@@ -1,5 +1,7 @@
+import AppRouter from "./routes/AppRouter";
+
 const App = () => {
-  return <h3>Lendsqr test</h3>;
+  return <AppRouter />;
 };
 
 export default App;
