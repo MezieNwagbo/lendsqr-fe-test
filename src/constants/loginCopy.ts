@@ -13,5 +13,8 @@ export const loginCopy = {
   },
 
   forgotPasswordText: "FORGOT PASSWORD?",
-  buttonText: "LOG IN",
+  button: {
+    label: "LOG IN",
+    loading: "LOGGING IN...",
+  },
 };

@@ -10,8 +10,10 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Users from "../pages/users/Users";
 import UserDetails from "../pages/userDetails/UserDetails";
 
+import { isAuthenticated } from "../utils/auth";
+
 const AppRouter = () => {
-  const isAuthenticated = false; // later you’ll replace this with real auth logic
+  const isAuth = isAuthenticated();
 
   return (
     <Router>
@@ -20,17 +22,13 @@ const AppRouter = () => {
         <Route
           path="/"
           element={
-            isAuthenticated ? (
-              <Navigate to="/dashboard" />
-            ) : (
-              <Navigate to="/login" />
-            )
+            isAuth ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
           }
         />
 
         <Route path="/login" element={<Login />} />
 
-        {isAuthenticated && (
+        {isAuth && (
           <>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/users" element={<Users />} />
