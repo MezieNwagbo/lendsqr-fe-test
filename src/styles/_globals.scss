@@ -1,0 +1,33 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  //   font-family: $font-stack;
+  //   color: $text-color;
+  //   background-color: #fafafa;
+  //   line-height: 1.6;
+  //   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  //   max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

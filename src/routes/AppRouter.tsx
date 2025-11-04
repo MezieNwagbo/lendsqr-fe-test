@@ -11,7 +11,7 @@ import Users from "../pages/users/Users";
 import UserDetails from "../pages/userDetails/UserDetails";
 
 const AppRouter = () => {
-  const isAuthenticated = true; // later you’ll replace this with real auth logic
+  const isAuthenticated = false; // later you’ll replace this with real auth logic
 
   return (
     <Router>

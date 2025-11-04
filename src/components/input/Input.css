@@ -89,4 +89,55 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-}/*# sourceMappingURL=Dashboard.css.map */
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+.input__label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.input__required {
+  color: #e4033b;
+  margin-left: 0.25rem;
+}
+.input__field {
+  padding: 1.0938rem 1rem;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  color: #545f7d;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input__field:focus {
+  border-color: #39cdcc;
+}
+.input__field::-moz-placeholder {
+  color: #545f7d;
+  opacity: 60%;
+}
+.input__field::placeholder {
+  color: #545f7d;
+  opacity: 60%;
+}
+.input__helper-text {
+  font-size: 0.85rem;
+  color: rgb(11.6962025316, 22.3291139241, 44.3037974684);
+}
+.input__error-text {
+  font-size: 0.85rem;
+  color: #e4033b;
+}
+.input--error .input__field {
+  border-color: #e4033b;
+  box-shadow: 0 0 0 3px rgba(228, 3, 59, 0.1);
+}
+.input--error .input__field:focus {
+  border-color: rgb(202.8311688312, 2.6688311688, 52.487012987);
+}/*# sourceMappingURL=Input.css.map */

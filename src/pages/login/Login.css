@@ -1,1 +1,200 @@
-/*# sourceMappingURL=Login.css.map */
+/* src/styles/_reset.scss */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a consistent base font and height */
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset button styles */
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Make images scale nicely */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Prevent text overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Create a root stacking context */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  /* ========= Left Banner ========= */
+  /* ========= Right Form ========= */
+  /* ========= Responsive ========= */
+}
+.login__banner {
+  position: relative;
+  background-color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  overflow: hidden;
+  padding: 6.625rem 6.0625rem;
+}
+@media (max-width: 1024px) {
+  .login__banner {
+    display: none;
+  }
+}
+.login__image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: multiply;
+}
+.login__image {
+  width: 600px;
+  height: 337.57px;
+  background: url("../../../public/login_image.png") center/cover no-repeat;
+}
+.login__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: #fff;
+  position: relative;
+}
+.login__logo-absolute {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+}
+@media (max-width: 1024px) {
+  .login__logo-absolute {
+    display: block;
+  }
+}
+.login__form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+.login__title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #213f7d;
+}
+.login__subtitle {
+  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 400;
+  color: #545f7d;
+}
+.login__form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.login__form-body a {
+  color: #39cdcc;
+  font-size: 0.75rem;
+}
+.login__input-group {
+  display: flex;
+  flex-direction: column;
+}
+.login__label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.login__input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .login {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .login__form {
+    padding: 2rem 1rem;
+  }
+  .login__title {
+    font-size: 1.75rem;
+  }
+}/*# sourceMappingURL=Login.css.map */
