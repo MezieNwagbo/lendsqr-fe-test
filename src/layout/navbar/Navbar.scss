@@ -1,0 +1,119 @@
+@use "../../styles" as *;
+.navbar {
+  //   height: 6.25rem;
+  background-color: #fff;
+  border-bottom: 0.0625rem solid #e5e7eb;
+  padding: 30px 60px 30px 30px;
+
+  @include respond("xs") {
+    padding: 24px;
+  }
+
+  nav {
+    @include flex-between;
+  }
+
+  &__logo {
+    width: 144.8px;
+    margin-right: 16px;
+    @include respond("xl") {
+      display: none;
+    }
+  }
+
+  &__logo-icon {
+    @include flex-center;
+    width: 144.8px;
+    margin-right: 16px;
+    display: none;
+    @include respond("xl") {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+    }
+  }
+
+  &__search {
+    width: 400px;
+    margin-right: 22.3125rem;
+
+    @include respond("xl") {
+      @include flex-center;
+      margin-right: 1.5rem;
+      width: 100%;
+    }
+
+    @include respond("lg") {
+      display: none; // Hide banner on tablets and below
+    }
+  }
+
+  &__search-mobile {
+    display: none;
+
+    @include respond("lg") {
+      @include flex-center;
+      margin-top: 16px;
+    }
+  }
+
+  &__actions-container {
+    @include flex-center;
+    // gap: .75rem;
+
+    a {
+      color: $color-brand-blue;
+      font-size: $font-size-base;
+      font-weight: $font-weight-regular;
+      text-decoration: underline;
+      @include respond("lg") {
+        display: none;
+      }
+    }
+
+    .bell-icon {
+      margin: 0px 30px 0px 47px;
+      width: 1.625rem;
+      height: 1.625rem;
+
+      @include respond("lg") {
+        display: none;
+      }
+    }
+  }
+
+  &__image-name {
+    @include flex-center;
+    gap: 0.625rem;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    @include respond("sm") {
+      display: none;
+    }
+  }
+
+  &__username {
+    @include flex-center;
+    gap: 2px;
+    width: 100%;
+
+    div {
+      padding: 8.1792px 6.3296px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0; // important
+
+      svg {
+        margin-top: 1px;
+        flex-shrink: 0; // prevents shrinking
+        width: 7.34px !important;
+        height: 4.15px !important;
+      }
+    }
+  }
+}
