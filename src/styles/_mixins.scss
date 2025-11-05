@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == "xs" {
     @media (max-width: 360px) {
@@ -19,6 +25,10 @@
     }
   } @else if $breakpoint == "lg" {
     @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (max-width: 1280px) {
       @content;
     }
   }

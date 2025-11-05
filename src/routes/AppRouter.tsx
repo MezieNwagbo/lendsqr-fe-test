@@ -11,6 +11,7 @@ import Users from "../pages/users/Users";
 import UserDetails from "../pages/userDetails/UserDetails";
 
 import { isAuthenticated } from "../utils/auth";
+import AppLayout from "../layout/appLayout/AppLayout";
 
 const AppRouter = () => {
   const isAuth = isAuthenticated();
@@ -29,11 +30,11 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
 
         {isAuth && (
-          <>
+          <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/users" element={<Users />} />
             <Route path="/users/:id" element={<UserDetails />} />
-          </>
+          </Route>
         )}
 
         {/* Fallback for unknown routes */}
