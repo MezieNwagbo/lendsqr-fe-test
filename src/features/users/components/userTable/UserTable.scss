@@ -1,0 +1,60 @@
+@use "../../../../styles/" as *;
+
+.user-table {
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+
+  .rdt_TableHead {
+    background-color: #f9fafc;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xs;
+    color: $color-neutral-500;
+    text-transform: uppercase;
+    height: 48px;
+  }
+
+  .rdt_TableRow {
+    font-size: $font-size-sm;
+    color: $color-neutral-500;
+    height: 61px;
+  }
+
+  .rdt_Pagination {
+    border-top: 1px solid rgba($color-brand-blue, 0.05);
+    padding-top: 1rem;
+  }
+
+  // Status badge styles
+  .status-badge {
+    display: inline-block;
+    padding: 7px 13px 6px 13px;
+    border-radius: 100px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+    text-transform: capitalize;
+  }
+
+  .status-active {
+    background-color: rgba($color-green, 0.1);
+    color: $color-green;
+  }
+
+  .status-inactive {
+    background-color: rgba($color-neutral-500, 0.1);
+    color: $color-neutral-500;
+  }
+
+  .status-pending {
+    background-color: rgba($color-warm-yellow, 0.1);
+    color: $color-warm-yellow;
+  }
+
+  .status-blacklisted {
+    background-color: rgba($color-danger, 0.1);
+    color: $color-danger;
+  }
+}

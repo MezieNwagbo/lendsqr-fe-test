@@ -1,0 +1,34 @@
+@use "../../styles/variables" as *;
+
+.kebab-menu__dropdown-portal {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  padding: 0.25rem 0;
+  min-width: 180px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kebab-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  color: $color-neutral-500;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background: rgba($color-brand-teal, 0.08);
+  }
+}
+
+.kebab-menu__icon {
+  width: 14px;
+  height: 14px;
+}

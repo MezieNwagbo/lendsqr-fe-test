@@ -4,7 +4,7 @@ import { usersMock } from "../api/users";
 import type { UserType, UsersSummaryType } from "../types/userTypes";
 
 export const useUsers = () => {
-  const [data, setData] = useState<UserType[]>([]);
+  const [users, setUsers] = useState<UserType[]>([]);
   const [summary, setSummary] = useState<UsersSummaryType>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -16,14 +16,11 @@ export const useUsers = () => {
 
       try {
         const [usersResponse, summaryResponse] = await Promise.all([
-          usersMock.getUsers(1, 50),
+          usersMock.getUsers(1, 500),
           usersMock.getUserSummary(),
         ]);
 
-        console.log("Fetched users:", usersResponse);
-        console.log("Fetched summary:", summaryResponse);
-
-        setData(usersResponse);
+        setUsers(usersResponse);
         setSummary(summaryResponse);
       } catch (err: any) {
         console.error("Error fetching users/summary:", err);
@@ -36,5 +33,5 @@ export const useUsers = () => {
     fetchUsers();
   }, []);
 
-  return { data, summary, loading, error };
+  return { users, summary, loading, error };
 };
