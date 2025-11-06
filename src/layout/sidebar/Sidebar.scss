@@ -1,6 +1,151 @@
+@use "../../styles" as *;
+
 .sidebar {
-  width: 240px;
-  background-color: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  padding: 1rem;
+  width: 283px;
+  background: #ffffff1e;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 10rem;
+
+  &__switch {
+    margin: 20px 0px 30px 0px;
+  }
+
+  &__nav {
+    list-style: none;
+  }
+
+  &__dashboard {
+    margin-bottom: 1.5rem;
+  }
+
+  &__section {
+    margin-bottom: 1.5rem;
+  }
+
+  &__section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba($color-brand-blue, 0.6);
+    margin: 0 0 10px 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__section-items {
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0 12px 28px;
+    color: rgba($color-brand-blue, 0.6);
+    text-decoration: none;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+
+    img {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    span {
+      flex: 1;
+    }
+
+    &:hover {
+      background-color: rgba($color-brand-teal, 0.05);
+      border-left: 3px solid $color-brand-teal;
+      color: $color-brand-blue;
+
+      img {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      background-color: rgba($color-brand-teal, 0.1);
+      border-left: 3px solid $color-brand-teal;
+      color: $color-brand-blue;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__switch-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0 12px 28px;
+    text-decoration: none;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-brand-blue;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    svg {
+      margin-top: 1px;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      opacity: 1;
+      flex-shrink: 0;
+    }
+
+    span {
+      flex: 1;
+    }
+
+    &.active {
+      background-color: rgba($color-brand-teal, 0.1);
+      border-left: 3px solid $color-brand-teal;
+      color: $color-brand-blue;
+
+      img {
+        opacity: 1;
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid rgba($color-brand-blue, 0.05);
+  }
+
+  &__logout {
+    padding-left: 28px;
+
+    button {
+      @include flex-center;
+      gap: 10px;
+      color: $color-brand-blue;
+      font-size: $font-size-base;
+      font-weight: $font-weight-regular;
+      padding: 20px 0px;
+      margin-bottom: 20px;
+    }
+
+    .version {
+      color: $color-brand-blue;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-regular;
+    }
+  }
 }

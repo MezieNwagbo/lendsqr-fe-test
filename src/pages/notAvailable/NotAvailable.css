@@ -1,0 +1,16 @@
+.feature-not-available {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #213f7d;
+}
+.feature-not-available h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.feature-not-available p {
+  color: rgba(33, 63, 125, 0.7);
+}/*# sourceMappingURL=NotAvailable.css.map */

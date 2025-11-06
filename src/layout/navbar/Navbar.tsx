@@ -7,12 +7,16 @@ import logoIcon from "../../assets/images/shared/logo_icon.svg";
 import profileImage from "../../assets/images/navbar/profile_image.png";
 import bellIcon from "../../assets/images/navbar/bell.svg";
 
+import { useSidebar } from "../../context/SidebarContext";
+
 import SearchInput from "../../components/searchInput/SearchInput";
 import Avatar from "../../components/avatar/Avatar";
 import { Link } from "react-router-dom";
 import Hamburger from "../../components/hamburger/Hamburger";
 
 const Navbar = () => {
+  const { toggleSidebar, isOpen } = useSidebar();
+
   const [user, setUser] = useState<{
     name: string;
     email: string;
@@ -33,7 +37,7 @@ const Navbar = () => {
 
         <header className="navbar__logo-icon">
           <img src={logoIcon} alt="Company Logo" />
-          <Hamburger />
+          <Hamburger onClick={toggleSidebar} isOpen={isOpen} />
         </header>
 
         <div className="navbar__search">
