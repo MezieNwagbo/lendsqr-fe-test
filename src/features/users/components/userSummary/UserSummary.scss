@@ -1,0 +1,37 @@
+@use "../../../../styles/" as *;
+
+.user-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: #fff;
+  padding: 20px 30px 30px 30px;
+  text-align: left;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    color: $color-neutral-500;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__value {
+    color: $color-brand-blue;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
