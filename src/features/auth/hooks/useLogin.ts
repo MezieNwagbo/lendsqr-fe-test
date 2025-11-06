@@ -13,10 +13,10 @@ export const useLogin = () => {
 
     try {
       const response: LoginResponse = await login(data);
-      console.log(response);
+      // console.log(response);
       localStorage.setItem("lendsqrAuth", JSON.stringify(response));
       toast.success("Login successful! Redirecting...");
-      setTimeout(() => (window.location.href = "/dashboard"), 1200);
+      setTimeout(() => (window.location.href = "/user"), 1200);
     } catch (err: any) {
       const message = err?.message || "Invalid email or password";
       toast.error(message);
