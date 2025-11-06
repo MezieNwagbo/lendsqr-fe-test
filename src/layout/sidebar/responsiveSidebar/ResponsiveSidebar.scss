@@ -1,0 +1,26 @@
+@use "../../../styles/mixins" as *;
+
+.responsive-sidebar {
+  &__hamburger {
+    display: none;
+
+    @include respond("xl") {
+      display: block;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1300;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__desktop {
+    display: block;
+
+    @include respond("xl") {
+      display: none;
+    }
+  }
+}

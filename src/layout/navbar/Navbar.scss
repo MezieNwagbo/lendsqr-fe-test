@@ -2,8 +2,8 @@
 .navbar {
   //   height: 6.25rem;
   background-color: #fff;
-  border-bottom: 0.0625rem solid #e5e7eb;
   padding: 30px 60px 30px 30px;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 
   @include respond("xs") {
     padding: 24px;
@@ -66,9 +66,9 @@
       font-size: $font-size-base;
       font-weight: $font-weight-regular;
       text-decoration: underline;
-      @include respond("lg") {
-        display: none;
-      }
+      // @include respond("lg") {
+      //   display: none;
+      // }
     }
 
     .bell-icon {
@@ -76,8 +76,8 @@
       width: 1.625rem;
       height: 1.625rem;
 
-      @include respond("lg") {
-        display: none;
+      @include respond("sm") {
+        margin: 0px 16px;
       }
     }
   }

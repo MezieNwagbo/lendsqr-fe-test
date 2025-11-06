@@ -15,6 +15,45 @@ html {
   padding: 0;
 }
 
+* {
+  // ===== Scrollbar Styling =====
+  // Start wth scrollbar hidden
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+
+  // On hover over scrollable element, show scrollbar
+  &:hover::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d8dde5;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken(#d8dde5, 10%);
+  }
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: none; // hide by default
+}
+*:hover {
+  scrollbar-width: thin; // show on hover
+  scrollbar-color: rgba(216, 221, 229, 0.4) #f1f1f1;
+}
+
 body {
   font-family: $font-family-work-sans;
   -webkit-font-smoothing: antialiased;
