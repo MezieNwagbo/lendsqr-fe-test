@@ -1,4 +1,4 @@
-import "./tablePagination.scss";
+import "./TablePagination.scss";
 import React from "react";
 import type { PaginationComponentProps } from "react-data-table-component";
 import chevronRight from "../../assets/images/shared/chevron_right.svg";
