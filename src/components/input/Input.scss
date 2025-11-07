@@ -26,7 +26,7 @@
       color: $color-brand-teal;
       position: absolute;
       right: 5%;
-      font-size: 0.75rem;
+      font-size: $font-size-xs;
       font-weight: 600;
     }
   }
@@ -36,7 +36,7 @@
     padding: 1.0938rem 1rem;
     border: 2px solid rgba(84, 95, 125, 0.15);
     border-radius: 0.3125rem;
-    font-size: 1rem;
+    font-size: $font-size-base;
     color: $color-neutral-500;
     background-color: #fff;
     outline: none;
@@ -58,12 +58,12 @@
   }
 
   &__helper-text {
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     color: darken($color-brand-blue, 20%);
   }
 
   &__error-text {
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     color: $color-danger;
   }
 

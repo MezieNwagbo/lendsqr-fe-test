@@ -5,28 +5,28 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   transition: background-color 0.25s ease, color 0.25s ease,
     box-shadow 0.2s ease;
 
-  // Default size (md)
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  // Sizes
+  padding: 14px 1.5rem;
+  font-size: $font-size-base;
 
   &--sm {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
   }
 
   &--lg {
     padding: 1rem 2rem;
-    font-size: 1.125rem;
+    font-size: $font-size-md;
   }
 
-  /* === Variants === */
+  // ====== Variants ======
   &--primary {
     background-color: $color-brand-teal;
     color: #fff;
@@ -36,40 +36,41 @@
     }
   }
 
-  //   &--secondary {
-  //     background-color: $secondary-color;
-  //     color: #fff;
+  &--primary-outline {
+    background-color: #fff;
+    color: $color-brand-teal;
+    border: 1px solid $color-brand-teal;
 
-  //     &:hover:not(:disabled) {
-  //       background-color: darken($secondary-color, 10%);
-  //     }
-  //   }
+    &:hover:not(:disabled) {
+      background-color: rgba($color-brand-teal, 0.08);
+    }
+  }
 
-  //   &--outline {
-  //     background-color: transparent;
-  //     color: $primary-color;
-  //     border: 1.5px solid $primary-color;
+  &--danger {
+    background-color: $color-danger;
+    border: 1.5px solid $color-brand-teal;
+    color: #fff;
 
-  //     &:hover:not(:disabled) {
-  //       background-color: rgba($primary-color, 0.08);
-  //     }
-  //   }
+    &:hover:not(:disabled) {
+      background-color: darken($color-danger, 8%);
+    }
+  }
 
-  //   &--danger {
-  //     background-color: $danger-color;
-  //     color: #fff;
+  &--danger-outline {
+    background-color: #fff;
+    color: $color-danger;
+    border: 1px solid red;
 
-  //     &:hover:not(:disabled) {
-  //       background-color: darken($danger-color, 8%);
-  //     }
-  //   }
+    &:hover:not(:disabled) {
+      background-color: rgba($color-danger, 0.08);
+    }
+  }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
-  /* Optional loading spinner */
   &__loader {
     width: 1.25rem;
     height: 1.25rem;

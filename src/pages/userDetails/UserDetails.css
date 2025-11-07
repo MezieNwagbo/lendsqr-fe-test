@@ -123,4 +123,98 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+.user-details .user-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.user-details .user-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #213f7d;
+}
+.user-details .user-header__info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.user-details .user-header__info .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-details .user-header__info .user-basic {
+  display: flex;
+  flex-direction: column;
+}
+.user-details .user-header__info .user-basic h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #213f7d;
+}
+.user-details .user-header__info .user-basic p {
+  font-size: 0.875rem;
+  color: #545f7d;
+}
+.user-details .user-header__info .status-badge {
+  margin-left: auto;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.user-details .user-header__info .status-badge.status-active {
+  background: rgba(0, 200, 0, 0.1);
+  color: #00c000;
+}
+.user-details .user-header__info .status-badge.status-pending {
+  background: rgba(255, 200, 0, 0.1);
+  color: #ffc200;
+}
+.user-details .user-header__info .status-badge.status-blacklisted {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+}
+.user-details .user-header__info .status-badge.status-inactive {
+  background: rgba(128, 128, 128, 0.1);
+  color: #808080;
+}
+.user-details .user-details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.user-details .user-details-grid .info-group {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+}
+.user-details .user-details-grid .info-group h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #213f7d;
+  margin-bottom: 16px;
+}
+.user-details .user-details-grid .info-group .info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.user-details .user-details-grid .info-group .info-row span:first-child {
+  font-size: 0.75rem;
+  color: #545f7d;
+}
+.user-details .user-details-grid .info-group .info-row span:last-child {
+  font-size: 0.875rem;
+  color: #213f7d;
+  font-weight: 500;
+}
+.user-details .user-details-grid .info-group .info-row:last-child {
+  border-bottom: none;
 }/*# sourceMappingURL=UserDetails.css.map */

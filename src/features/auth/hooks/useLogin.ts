@@ -13,7 +13,7 @@ export const useLogin = () => {
 
     try {
       const response: LoginResponse = await login(data);
-      // console.log(response);
+
       localStorage.setItem("lendsqrAuth", JSON.stringify(response));
       toast.success("Login successful! Redirecting...");
       setTimeout(() => (window.location.href = "/user"), 1200);

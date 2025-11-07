@@ -1,21 +1,19 @@
 import React from "react";
 import "./Button.scss";
 
-export type ButtonVariant = "primary";
+export type ButtonVariant =
+  | "primary"
+  | "primary-outline"
+  | "danger"
+  | "danger-outline";
 export type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Visual variant of the button */
   variant?: ButtonVariant;
-  /** Size of the button */
   size?: ButtonSize;
-  /** Whether the button is loading or disabled */
   isLoading?: boolean;
 }
 
-/**
- * A reusable button component with consistent styling and variants.
- */
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = "primary",

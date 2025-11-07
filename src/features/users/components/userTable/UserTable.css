@@ -145,6 +145,7 @@ body {
   font-size: 0.875rem;
   color: #545f7d;
   height: 61px;
+  cursor: default;
 }
 .user-table .rdt_Pagination {
   border-top: 1px solid rgba(33, 63, 125, 0.05);

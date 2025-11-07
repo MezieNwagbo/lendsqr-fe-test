@@ -23,14 +23,14 @@
     outline: none;
     padding: 12px 20px 12px 20px;
     font-family: $font-family-work-sans;
-    font-size: 0.95rem;
+    font-size: $font-size-base;
     color: $color-neutral-500;
     background-color: transparent;
     width: 100%;
 
     @include respond("xs") {
       padding: 12px;
-      font-size: 13px;
+      font-size: 0.8125rem;
     }
 
     &::placeholder {

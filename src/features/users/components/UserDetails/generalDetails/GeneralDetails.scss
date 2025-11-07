@@ -1,0 +1,67 @@
+@use "../../../../../styles/" as *;
+
+.general-details {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+
+  &__section {
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-brand-blue;
+    margin-bottom: 30px;
+  }
+
+  &__info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+    border-bottom: 1px solid rgba($color-brand-blue, 0.1);
+    padding-bottom: 15px;
+
+    /* divider */
+
+    @include respond("lg") {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond("sm") {
+      grid-template-columns: 1fr;
+    }
+
+    .info-item {
+      padding: 0px 12px 0px 0px;
+      margin-bottom: 20px;
+    }
+
+    .info-title {
+      color: $color-neutral-500;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-regular;
+      margin-bottom: 8px;
+    }
+
+    .info-value {
+      color: $color-neutral-500;
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+
+      @include respond("sm") {
+        max-width: 180px;
+      }
+
+      white-space: nowrap; /* Prevents text from wrapping to the next line */
+      overflow: hidden; /* Hides any overflowing text */
+      text-overflow: ellipsis;
+    }
+  }
+
+  .last-item {
+    border-bottom: 1px solid transparent;
+  }
+}

@@ -28,18 +28,18 @@
   &--sm {
     width: 32px;
     height: 32px;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
   }
 
   &--md {
     width: 48px;
     height: 48px;
-    font-size: 1rem;
+    font-size: $font-size-base;
   }
 
   &--lg {
-    width: 64px;
-    height: 64px;
-    font-size: 1.25rem;
+    width: 100px;
+    height: 100px;
+    font-size: $font-size-lg;
   }
 }

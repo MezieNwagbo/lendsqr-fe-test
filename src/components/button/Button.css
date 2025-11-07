@@ -130,15 +130,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   font-weight: 600;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.2s ease;
-  padding: 0.75rem 1.5rem;
+  padding: 14px 1.5rem;
   font-size: 1rem;
-  /* === Variants === */
-  /* Optional loading spinner */
 }
 .btn--sm {
   padding: 0.5rem 1rem;
@@ -154,6 +152,30 @@ body {
 }
 .btn--primary:hover:not(:disabled) {
   background-color: rgb(42.5403225806, 168.4596774194, 167.6088709677);
+}
+.btn--primary-outline {
+  background-color: #fff;
+  color: #39cdcc;
+  border: 1px solid #39cdcc;
+}
+.btn--primary-outline:hover:not(:disabled) {
+  background-color: rgba(57, 205, 204, 0.08);
+}
+.btn--danger {
+  background-color: #e4033b;
+  border: 1.5px solid #39cdcc;
+  color: #fff;
+}
+.btn--danger:hover:not(:disabled) {
+  background-color: rgb(187.7298701299, 2.4701298701, 48.5792207792);
+}
+.btn--danger-outline {
+  background-color: #fff;
+  color: #e4033b;
+  border: 1px solid red;
+}
+.btn--danger-outline:hover:not(:disabled) {
+  background-color: rgba(228, 3, 59, 0.08);
 }
 .btn:disabled {
   opacity: 0.6;
