@@ -1,0 +1,25 @@
+@use "../../../../styles/" as *;
+.user-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 12px;
+  }
+
+  &__card {
+    flex: 1;
+    min-width: 220px;
+    background-color: #f8f9fe;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fe;
+  }
+}
