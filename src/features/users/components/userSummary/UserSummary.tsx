@@ -1,5 +1,5 @@
 import React from "react";
-import "./userSummary.scss";
+import "./UserSummary.scss";
 
 import totalUsersIcon from "../../../../assets/images/users/total_users_icon.svg";
 import activeUsersIcon from "../../../../assets/images/users/active_users_icon.svg";
