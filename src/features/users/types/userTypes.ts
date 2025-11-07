@@ -34,6 +34,7 @@ export type GuarantorType = {
 
 export type UserType = {
   id: string;
+  userId: string;
   organisation: string;
   username: string;
   email: string;
@@ -44,6 +45,8 @@ export type UserType = {
   education: EducationType;
   socials: SocialsType;
   guarantor: GuarantorType[];
+  userTier: string;
+  bvn: string;
 };
 
 export type UsersSummaryType = {

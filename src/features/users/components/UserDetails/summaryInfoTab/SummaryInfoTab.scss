@@ -6,6 +6,7 @@
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
+  margin-bottom: 30px;
 
   /* base */
 
@@ -40,6 +41,7 @@
       color: $color-neutral-500;
       font-size: $font-size-sm;
       font-weight: $font-weight-medium;
+      margin-bottom: 10px;
     }
     .item-bank-detail {
       color: $color-brand-blue;

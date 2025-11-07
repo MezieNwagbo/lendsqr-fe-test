@@ -1,100 +1,56 @@
 import fs from "fs";
-import path from "path";
 
-// Path to your users.json
-const filePath = path.join(process.cwd(), "users.json");
+// Path to your users.json file
+const filePath = "./users.json";
 
-// Utility functions
-const randomChoice = (arr) => arr[Math.floor(Math.random() * arr.length)];
-const randomNumber = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const formatCurrency = (num) => `₦${num.toLocaleString()}`;
+// function generateRandomId(salt = "") {
+//   const base = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   let id = "";
 
-// Options for profile and education
-const genders = ["Male", "Female"];
-const maritalStatuses = ["Single", "Married", "Divorced"];
-const residenceTypes = ["Apartment", "House", "Parent's House", "Hostel"];
-const educationLevels = ["B.Sc", "HND", "M.Sc", "PhD"];
-const employmentStatuses = ["Employed", "Self-employed", "Unemployed"];
-const sectors = ["Technology", "Finance", "Health", "Education", "Agriculture"];
+//   // Incorporate the salt by seeding the random behavior slightly
+//   const seed = Array.from(salt).reduce(
+//     (acc, char) => acc + char.charCodeAt(0),
+//     0
+//   );
 
-// Guarantor name pools
-const firstNames = [
-  "John",
-  "Jane",
-  "Paul",
-  "Mary",
-  "Mike",
-  "Linda",
-  "David",
-  "Susan",
-  "James",
-  "Patricia",
-];
-const lastNames = [
-  "Smith",
-  "Johnson",
-  "Williams",
-  "Brown",
-  "Jones",
-  "Miller",
-  "Davis",
-  "Garcia",
-  "Wilson",
-  "Taylor",
-];
+//   for (let i = 0; i < 11; i++) {
+//     const randomIndex =
+//       Math.floor((Math.random() + (seed % 1)) * base.length) % base.length;
+//     id += base.charAt(randomIndex);
+//   }
 
-// Read existing users
-const users = JSON.parse(fs.readFileSync(filePath, "utf8"));
+//   return id;
+// }
 
-// Enrich users
-const enrichedUsers = users.map((user, index) => {
-  const [firstName, lastName] = user.username.split(" ");
+function generateRandomNumberString() {
+  let result = "";
+  for (let i = 0; i < 10; i++) {
+    result += Math.floor(Math.random() * 10); // random digit 0–9
+  }
+  return result;
+}
 
-  return {
+// Example usage:
+// console.log(generateRandomId());         // e.g. "x9Qa2LmTzC8"
+// console.log(generateRandomId("chimezie"));// e.g. "mH2aP7rYQ0S"
+// console.log(generateRandomId("user123")); // e.g. "B8tqzF6aYc2"
+
+try {
+  // Read existing users
+  const users = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+  // Update each user with a random tier (1–3)
+  const updatedUsers = users.map((user) => ({
     ...user,
-    profile: {
-      firstName,
-      lastName,
-      avatar: `https://i.pravatar.cc/150?img=${(index % 70) + 1}`,
-      bvn: `${randomNumber(10000000000, 99999999999)}`,
-      gender: randomChoice(genders),
-      maritalStatus: randomChoice(maritalStatuses),
-      children: randomNumber(0, 4),
-      typeOfResidence: randomChoice(residenceTypes),
-    },
-    education: {
-      level: randomChoice(educationLevels),
-      employmentStatus: randomChoice(employmentStatuses),
-      sector: randomChoice(sectors),
-      duration: `${randomNumber(1, 10)} years`,
-      officeEmail: user.email, // same as original email
-      monthlyIncome: [
-        formatCurrency(randomNumber(100000, 500000)),
-        formatCurrency(randomNumber(500001, 1000000)),
-      ],
-      loanRepayment: formatCurrency(randomNumber(20000, 100000)),
-    },
-    socials: {
-      twitter: `@${user.username.replace(" ", "").toLowerCase()}`,
-      facebook: `facebook.com/${user.username.replace(" ", "").toLowerCase()}`,
-      instagram: `@${user.username.replace(" ", "").toLowerCase()}`,
-    },
-    guarantor: [
-      {
-        firstName: randomChoice(firstNames),
-        lastName: randomChoice(lastNames),
-        phoneNumber: `0${randomNumber(7000000000, 9999999999)}`,
-        email: `guar${index + 1}@example.com`,
-        relationship: randomChoice(["Sibling", "Parent", "Spouse"]),
-      },
-    ],
-  };
-});
+    bvn: generateRandomNumberString(),
+  }));
 
-// Write back enriched users.json
-fs.writeFileSync(filePath, JSON.stringify(enrichedUsers, null, 2));
+  // Write back to file (pretty format)
+  fs.writeFileSync(filePath, JSON.stringify(updatedUsers, null, 2));
 
-console.log(
-  "✅ users.json enriched with profile, education, socials, and realistic guarantors!"
-);
+  console.log(
+    `✅ Successfully added userTier to ${updatedUsers.length} users!`
+  );
+} catch (error) {
+  console.error("❌ Error updating users.json:", error.message);
+}

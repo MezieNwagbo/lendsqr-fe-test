@@ -131,6 +131,7 @@ body {
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
+  margin-bottom: 30px;
   /* base */
 }
 .summary-info__container {
@@ -165,6 +166,7 @@ body {
   color: #545f7d;
   font-size: 0.875rem;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 .summary-info__item .item-bank-detail {
   color: #213f7d;
