@@ -28,10 +28,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         {/* Redirect root to login or dashboard */}
-        <Route
-          path="/"
-          element={isAuth ? <Navigate to="/users" /> : <Navigate to="/login" />}
-        />
+        <Route path="/" element={<Navigate to="/login" />} />
 
         <Route path="/login" element={<Login />} />
 

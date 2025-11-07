@@ -55,7 +55,7 @@ const Login = () => {
       {/* Left Banner Section */}
       <section className="login__banner" aria-hidden="true">
         <header className="login__logo">
-          <img src={logo} alt="Company Logo" />
+          <img src={logo} alt="Company_Logo" />
         </header>
 
         <figure className="login__image-container">

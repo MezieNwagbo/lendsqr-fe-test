@@ -69,7 +69,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
           className="user-table__wrapper"
           onRowClicked={(row: UserType) => goToUserDetails(row)}
           sortIcon={<SortIcon />}
-          pagination={false} // explicitly off
+          pagination={false}
         />
       </div>
 
