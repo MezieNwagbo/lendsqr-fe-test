@@ -30,11 +30,6 @@ function generateRandomNumberString() {
   return result;
 }
 
-// Example usage:
-// console.log(generateRandomId());         // e.g. "x9Qa2LmTzC8"
-// console.log(generateRandomId("chimezie"));// e.g. "mH2aP7rYQ0S"
-// console.log(generateRandomId("user123")); // e.g. "B8tqzF6aYc2"
-
 try {
   // Read existing users
   const users = JSON.parse(fs.readFileSync(filePath, "utf8"));

@@ -174,11 +174,11 @@ body {
   opacity: 60%;
 }
 .input__helper-text {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: rgb(11.6962025316, 22.3291139241, 44.3037974684);
 }
 .input__error-text {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: #e4033b;
 }
 .input--error .input__field {

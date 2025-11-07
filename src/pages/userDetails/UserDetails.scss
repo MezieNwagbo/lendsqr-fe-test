@@ -8,9 +8,9 @@
     margin-bottom: 32px;
 
     h1 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #213f7d;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-brand-blue;
     }
 
     &__info {
@@ -29,12 +29,12 @@
         display: flex;
         flex-direction: column;
         h2 {
-          font-size: 20px;
-          font-weight: 600;
-          color: #213f7d;
+          font-size: $font-size-lg;
+          font-weight: $font-weight-semibold;
+          color: $color-brand-blue;
         }
         p {
-          font-size: 14px;
+          font-size: $font-size-sm;
           color: #545f7d;
         }
       }
@@ -43,8 +43,8 @@
         margin-left: auto;
         padding: 4px 12px;
         border-radius: 12px;
-        font-size: 12px;
-        font-weight: 600;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
 
         &.status-active {
           background: rgba(0, 200, 0, 0.1);
@@ -77,9 +77,9 @@
       padding: 24px;
 
       h3 {
-        font-size: 16px;
-        font-weight: 600;
-        color: #213f7d;
+        font-size: $font-size-base;
+        font-weight: $font-weight-semibold;
+        color: $color-brand-blue;
         margin-bottom: 16px;
       }
 
@@ -90,13 +90,13 @@
         border-bottom: 1px solid #f0f0f0;
 
         span:first-child {
-          font-size: 12px;
+          font-size: $font-size-xs;
           color: #545f7d;
         }
         span:last-child {
-          font-size: 14px;
-          color: #213f7d;
-          font-weight: 500;
+          font-size: $font-size-sm;
+          color: $color-brand-blue;
+          font-weight: $font-weight-medium;
         }
 
         &:last-child {

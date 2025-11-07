@@ -52,9 +52,9 @@ const GeneralDetails = ({ user }: Props) => {
         <h5 className="general-details__header">Personal Information</h5>
 
         <div className="general-details__info-wrapper">
-          {Object.entries(personalInfo).map(([key, value]) => {
+          {Object.entries(personalInfo).map(([key, value], index) => {
             return (
-              <div className="info-item">
+              <div className="info-item" key={index}>
                 <p className="info-title">{formatText(key, "uppercase")}</p>
                 <p className="info-value">{value}</p>
               </div>

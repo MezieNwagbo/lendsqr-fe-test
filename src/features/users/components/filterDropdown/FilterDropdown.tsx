@@ -54,7 +54,9 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
           <select id="status">
             <option value="">Select</option>
             {organizationData.map((org) => (
-              <option value={org}>{org}</option>
+              <option value={org} key={org}>
+                {org}
+              </option>
             ))}
           </select>
         </div>

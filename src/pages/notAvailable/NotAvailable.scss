@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .feature-not-available {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   justify-content: center;
   height: 100%;
   text-align: center;
-  color: #213f7d;
+  color: $color-brand-blue;
 
   h2 {
     font-size: 1.75rem;
@@ -13,6 +15,6 @@
   }
 
   p {
-    color: rgba(#213f7d, 0.7);
+    color: rgba($color-brand-blue, 0.7);
   }
 }

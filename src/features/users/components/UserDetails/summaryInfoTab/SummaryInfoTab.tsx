@@ -34,9 +34,7 @@ const SummaryInfoTab = ({ user }: Props) => {
         </div>
 
         <div className="summary-info__item ">
-          <h3 className="item-title" onClick={() => console.log(user)}>
-            {username}
-          </h3>
+          <h3 className="item-title">{username}</h3>
           <p className="item-id">{userId}</p>
         </div>
 
@@ -54,7 +52,7 @@ const SummaryInfoTab = ({ user }: Props) => {
 
       <div className="summary-info__tab">
         {tabData.map((tab) => (
-          <div onClick={() => handleTabClick(tab)}>
+          <div onClick={() => handleTabClick(tab)} key={tab}>
             <p className={`${tab === "General details" && "active"}`}>{tab}</p>
           </div>
         ))}

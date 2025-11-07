@@ -132,7 +132,7 @@ body {
   margin-bottom: 32px;
 }
 .user-details .user-header h1 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #213f7d;
 }
@@ -153,19 +153,19 @@ body {
   flex-direction: column;
 }
 .user-details .user-header__info .user-basic h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #213f7d;
 }
 .user-details .user-header__info .user-basic p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #545f7d;
 }
 .user-details .user-header__info .status-badge {
   margin-left: auto;
   padding: 4px 12px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 .user-details .user-header__info .status-badge.status-active {
@@ -195,7 +195,7 @@ body {
   padding: 24px;
 }
 .user-details .user-details-grid .info-group h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #213f7d;
   margin-bottom: 16px;
@@ -207,11 +207,11 @@ body {
   border-bottom: 1px solid #f0f0f0;
 }
 .user-details .user-details-grid .info-group .info-row span:first-child {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #545f7d;
 }
 .user-details .user-details-grid .info-group .info-row span:last-child {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #213f7d;
   font-weight: 500;
 }
