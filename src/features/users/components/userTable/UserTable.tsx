@@ -1,4 +1,4 @@
-import "./userTable.scss";
+import "./UserTable.scss";
 
 import type { UserType } from "../../types/userTypes";
 
