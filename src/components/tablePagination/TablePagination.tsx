@@ -13,7 +13,7 @@ const TablePagination: React.FC<PaginationComponentProps> = ({
 }) => {
   const totalPages = Math.ceil(rowCount / rowsPerPage);
 
-  // 🧮 Helper: Generate visible page numbers
+  // Generate visible page numbers
   const generatePageNumbers = () => {
     const pages: (number | string)[] = [];
 

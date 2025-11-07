@@ -157,6 +157,7 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   text-transform: capitalize;
+  display: -webkit-box;
 }
 .user-table .status-active {
   background-color: rgba(57, 205, 98, 0.1);
@@ -173,4 +174,5 @@ body {
 .user-table .status-blacklisted {
   background-color: rgba(228, 3, 59, 0.1);
   color: #e4033b;
+  padding: 7px 12.4px 6px 12.4px;
 }/*# sourceMappingURL=UserTable.css.map */
