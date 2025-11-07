@@ -1,18 +1,13 @@
 import React from "react";
 import "./Avatar.scss";
 
-interface AvatarProps {
-  /** Image URL for the avatar */
+type AvatarProps = {
   src?: string;
-  /** Alternative text for the image */
   alt?: string;
-  /** Name (used to generate initials if no image is provided) */
   name?: string;
-  /** Size of the avatar (e.g. sm, md, lg) */
   size?: "sm" | "md" | "lg";
-  /** Optional click handler */
   onClick?: () => void;
-}
+};
 
 /**
  * Avatar component that displays a user image or fallback initials.

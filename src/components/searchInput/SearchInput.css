@@ -100,7 +100,7 @@ html {
   transition: background-color 0.2s ease;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: rgb(185.4, 194.3230769231, 208.6);
+  background: rgb(47.5403225806, 188.2596774194, 187.3088709677);
 }
 
 /* Firefox support */
@@ -191,5 +191,5 @@ body {
   flex-shrink: 0;
 }
 .search-input__button:hover {
-  background-color: rgb(47.6814516129, 188.8185483871, 187.8649193548);
+  background-color: rgb(50.1814516129, 198.7185483871, 197.7149193548);
 }/*# sourceMappingURL=SearchInput.css.map */

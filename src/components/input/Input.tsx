@@ -2,19 +2,12 @@ import { useState } from "react";
 import "./Input.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** Label for the input */
   label?: string;
-  /** Error message for validation state */
   error?: string;
-  /** Helper text (optional) */
   helperText?: string;
-  /** Whether the input is required */
   required?: boolean;
 }
 
-/**
- * A reusable, accessible input component.
- */
 const Input: React.FC<InputProps> = ({
   label,
   error,

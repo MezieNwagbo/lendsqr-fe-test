@@ -100,7 +100,7 @@ html {
   transition: background-color 0.2s ease;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: rgb(185.4, 194.3230769231, 208.6);
+  background: rgb(47.5403225806, 188.2596774194, 187.3088709677);
 }
 
 /* Firefox support */
@@ -175,7 +175,7 @@ body {
 }
 .input__helper-text {
   font-size: 0.875rem;
-  color: rgb(11.6962025316, 22.3291139241, 44.3037974684);
+  color: rgb(26.4, 50.4, 100);
 }
 .input__error-text {
   font-size: 0.875rem;
@@ -186,5 +186,5 @@ body {
   box-shadow: 0 0 0 3px rgba(228, 3, 59, 0.1);
 }
 .input--error .input__field:focus {
-  border-color: rgb(202.8311688312, 2.6688311688, 52.487012987);
+  border-color: rgb(216.6, 2.85, 56.05);
 }/*# sourceMappingURL=Input.css.map */

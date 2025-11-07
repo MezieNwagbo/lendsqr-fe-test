@@ -1,8 +1,8 @@
 import React from "react";
 
-interface UserTierStarsProps {
+type UserTierStarsProps = {
   tier: number; // 1, 2, or 3
-}
+};
 
 const FilledStar = () => (
   <svg

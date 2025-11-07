@@ -1,17 +1,17 @@
 import React from "react";
-import "./userSummary.scss";
+import "./UserSummary.scss";
 
 import totalUsersIcon from "../../../../assets/images/users/total_users_icon.svg";
 import activeUsersIcon from "../../../../assets/images/users/active_users_icon.svg";
 import usersWithLoanIcon from "../../../../assets/images/users/users_with_loans_icon.svg";
 import usersWithSavingsIcon from "../../../../assets/images/users/users_with_savings_icon.svg";
 
-interface SummaryCardProps {
+type SummaryCardProps = {
   title: string;
   value: string | number;
   icon?: string;
   color?: string;
-}
+};
 
 const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon }) => {
   return (
@@ -23,14 +23,14 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon }) => {
   );
 };
 
-interface UserSummaryProps {
+type UserSummaryProps = {
   summary: {
     totalUsers: number;
     activeUsers: number;
     usersWithLoans: number;
     usersWithSavings: number;
   };
-}
+};
 
 const UserSummary: React.FC<UserSummaryProps> = ({ summary }) => {
   return (

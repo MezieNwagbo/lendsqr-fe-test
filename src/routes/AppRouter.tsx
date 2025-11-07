@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 
 import Login from "../pages/login/Login";
-import Dashboard from "../pages/dashboard/Dashboard";
 import Users from "../pages/users/Users";
 import UserDetails from "../pages/userDetails/UserDetails";
 import NotAvailable from "../pages/notAvailable/NotAvailable";
@@ -17,7 +16,6 @@ import { sidebarData } from "../data/sidebarData";
 const AppRouter = () => {
   const isAuth = isAuthenticated();
 
-  // Flatten all sidebar routes into one array
   const allSidebarRoutes = sidebarData.flatMap(
     (section) =>
       section.children?.map((item) => item.route).filter(Boolean) || []
@@ -44,7 +42,7 @@ const AppRouter = () => {
             <Route path="/users" element={<Users />} />
             <Route path="/users/:id" element={<UserDetails />} />
 
-            {/* All other sidebar routes -> FeatureNotAvailable */}
+            {/* Other routes */}
             {allSidebarRoutes.map(
               (path) =>
                 !implementedRoutes.includes(path!) && (
@@ -54,7 +52,7 @@ const AppRouter = () => {
           </Route>
         )}
 
-        {/* Catch-all fallback */}
+        {/* fallback */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

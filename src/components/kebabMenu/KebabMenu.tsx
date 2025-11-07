@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import "./KebabMenu.scss";
 
-interface KebabMenuOption {
+type KebabMenuOption = {
   label: string;
   icon?: string;
   onClick?: (row?: any) => void;
-}
+};
 
-interface KebabMenuProps {
+type KebabMenuProps = {
   options: KebabMenuOption[];
   row?: any;
-}
+};
 
 const KebabMenu: React.FC<KebabMenuProps> = ({ options, row }) => {
   const [open, setOpen] = useState(false);

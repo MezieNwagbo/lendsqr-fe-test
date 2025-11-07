@@ -47,69 +47,69 @@ const GeneralDetails = ({ user }: Props) => {
   };
 
   return (
-    <div className="general-details">
-      <div className="general-details__section">
-        <h5 className="general-details__header">Personal Information</h5>
+    <article className="general-details">
+      <section className="general-details__section">
+        <header>
+          <h2 className="general-details__header">Personal Information</h2>
+        </header>
 
-        <div className="general-details__info-wrapper">
-          {Object.entries(personalInfo).map(([key, value], index) => {
-            return (
-              <div className="info-item" key={index}>
-                <p className="info-title">{formatText(key, "uppercase")}</p>
-                <p className="info-value">{value}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="general-details__section">
-        <h5 className="general-details__header">Education and Employment</h5>
-
-        <div className="general-details__info-wrapper">
-          {Object.entries(educationAndEmployment).map(([key, value]) => {
-            return (
-              <div className="info-item">
-                <p className="info-title">{formatText(key, "uppercase")}</p>
-                <p className="info-value">{value}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="general-details__section">
-        <h5 className="general-details__header">Socials</h5>
-
-        <div className="general-details__info-wrapper">
-          {Object.entries(socials).map(([key, value]) => {
-            return (
-              <div className="info-item">
-                <p className="info-title">{formatText(key, "uppercase")}</p>
-                <p className="info-value">{value}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {guarantor.map((item) => {
-        return (
-          <div className="general-details__section">
-            <h5 className="general-details__header">Guarantor</h5>
-
-            <div className="general-details__info-wrapper last-item">
-              {Object.entries(item).map(([key, value]) => {
-                return (
-                  <div className="info-item">
-                    <p className="info-title">{formatText(key, "uppercase")}</p>
-                    <p className="info-value">{value}</p>
-                  </div>
-                );
-              })}
+        <dl className="general-details__info-wrapper">
+          {Object.entries(personalInfo).map(([key, value], index) => (
+            <div className="info-item" key={index}>
+              <dt className="info-title">{formatText(key, "uppercase")}</dt>
+              <dd className="info-value">{value}</dd>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="general-details__section">
+        <header>
+          <h2 className="general-details__header">Education and Employment</h2>
+        </header>
+
+        <dl className="general-details__info-wrapper">
+          {Object.entries(educationAndEmployment).map(([key, value]) => (
+            <div className="info-item" key={key}>
+              <dt className="info-title">{formatText(key, "uppercase")}</dt>
+              <dd className="info-value">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section className="general-details__section">
+        <header>
+          <h2 className="general-details__header">Socials</h2>
+        </header>
+
+        <dl className="general-details__info-wrapper">
+          {Object.entries(socials).map(([key, value]) => (
+            <div className="info-item" key={key}>
+              <dt className="info-title">{formatText(key, "uppercase")}</dt>
+              <dd className="info-value">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {guarantor.map((item, i) => (
+        <section className="general-details__section" key={i}>
+          <header>
+            <h2 className="general-details__header">Guarantor</h2>
+          </header>
+
+          <dl className="general-details__info-wrapper last-item">
+            {Object.entries(item).map(([key, value]) => (
+              <div className="info-item" key={key}>
+                <dt className="info-title">{formatText(key, "uppercase")}</dt>
+                <dd className="info-value">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))}
+    </article>
   );
 };
 

@@ -22,12 +22,12 @@ import feesAndPricesIcon from "../assets/images/sidebarMenu/fees_and_princing_ic
 import auditIcon from "../assets/images/sidebarMenu/audit_logs_icon.svg";
 import systemMessageIcon from "../assets/images/sidebarMenu/system_message_icon.svg";
 
-export interface SidebarItem {
+export type SidebarItem = {
   title: string;
-  icon?: string; // path to icon (optional)
-  route?: string; // for navigation
-  children?: SidebarItem[]; // for nested sections
-}
+  icon?: string;
+  route?: string;
+  children?: SidebarItem[];
+};
 
 export const sidebarData: SidebarItem[] = [
   {

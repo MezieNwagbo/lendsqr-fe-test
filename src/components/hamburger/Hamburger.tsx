@@ -1,14 +1,11 @@
 import React from "react";
 import "./Hamburger.scss";
 
-interface HamburgerProps {
-  /** Is the menu open? */
+type HamburgerProps = {
   isOpen: boolean;
-  /** Callback when clicked */
   onClick: () => void;
-  /** Optional size */
   size?: number;
-}
+};
 
 /**
  * Hamburger menu button.

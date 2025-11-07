@@ -5,11 +5,11 @@ import "./FilterDropdown.scss";
 import { organizationData } from "../../../../data/mockData/organizationData";
 import { userStatusData } from "../../../../data/mockData/userStatusData";
 
-interface FilterDropdownProps {
+type FilterDropdownProps = {
   isOpen: boolean;
   anchorEl: HTMLElement | null;
   onClose: () => void;
-}
+};
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({
   isOpen,

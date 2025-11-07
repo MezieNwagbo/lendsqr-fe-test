@@ -7,12 +7,12 @@ import React, {
 
 import type { LoginResponse, User } from "../types/loginTypes";
 
-interface AuthContextType {
+type AuthContextType = {
   user: User | null;
   token: string | null;
   login: (data: LoginResponse) => void;
   logout: () => void;
-}
+};
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
