@@ -16,7 +16,7 @@ export const useLogin = () => {
 
       localStorage.setItem("lendsqrAuth", JSON.stringify(response));
       toast.success("Login successful! Redirecting...");
-      setTimeout(() => (window.location.href = "/user"), 1200);
+      setTimeout(() => (window.location.href = "/users"), 1200);
     } catch (err: any) {
       const message = err?.message || "Invalid email or password";
       toast.error(message);
