@@ -5,13 +5,15 @@ import "./KebabMenu.scss";
 interface KebabMenuOption {
   label: string;
   icon?: string;
+  onClick?: (row?: any) => void;
 }
 
 interface KebabMenuProps {
   options: KebabMenuOption[];
+  row?: any;
 }
 
-const KebabMenu: React.FC<KebabMenuProps> = ({ options }) => {
+const KebabMenu: React.FC<KebabMenuProps> = ({ options, row }) => {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [coords, setCoords] = useState<{ top: number; left: number } | null>(
@@ -80,6 +82,7 @@ const KebabMenu: React.FC<KebabMenuProps> = ({ options }) => {
                 className="kebab-menu__item"
                 onClick={() => {
                   setOpen(false);
+                  options[i].onClick?.(row);
                 }}
               >
                 {opt.icon && (

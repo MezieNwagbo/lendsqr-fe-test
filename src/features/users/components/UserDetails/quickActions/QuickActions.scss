@@ -1,0 +1,47 @@
+@use "../../../../../styles/" as *;
+
+.quick-actions {
+  .btn-back {
+    background: transparent;
+    border: none;
+    color: $color-neutral-500;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 20px;
+
+    svg {
+      margin-top: 0.8px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    @include respond("lg") {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    h1 {
+      color: $color-brand-blue;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      padding: 8px 16px;
+      transition: all 0.2s ease;
+    }
+  }
+}

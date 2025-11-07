@@ -1,15 +1,18 @@
 import "./userTable.scss";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import DataTable, { type TableColumn } from "react-data-table-component";
 import KebabMenu from "../../../../components/kebabMenu/KebabMenu";
 import TablePagination from "../../../../components/tablePagination/TablePagination";
 import { formatDate } from "../../../../utils/formatter";
+
+import { useNavigate } from "react-router-dom";
 
 import viewIcon from "../../../../assets/images/users/view_icon.svg";
 import activateIcon from "../../../../assets/images/users/activate_icon.svg";
 import blacklistIcon from "../../../../assets/images/users/blacklist_icon.svg";
 
 import useUserTable from "../../hooks/useUserTable";
+import { useUserNavigation } from "../../hooks/useUserNavigation";
 
 import FilterDropdown from "../filterDropdown/FilterDropdown";
 import type { UserType } from "../../types/userTypes";
@@ -20,6 +23,8 @@ interface UserTableProps {
 }
 
 const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
+  const navigate = useNavigate();
+  const { goToUserDetails } = useUserNavigation();
   const {
     paginatedUsers,
     handleChangePage,
@@ -84,13 +89,18 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
     },
     {
       name: "",
-      cell: () => (
+      cell: (row) => (
         <KebabMenu
           options={[
-            { label: "View Details", icon: viewIcon },
+            {
+              label: "View Details",
+              icon: viewIcon,
+              onClick: (user) => goToUserDetails(user),
+            },
             { label: "Blacklist User", icon: blacklistIcon },
             { label: "Activate User", icon: activateIcon },
           ]}
+          row={row}
         />
       ),
       width: "70px",
@@ -121,6 +131,7 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
           customStyles={userTableStyle}
           responsive
           className="user-table__wrapper"
+          onRowClicked={(row: UserType) => goToUserDetails(row)}
           sortIcon={<SortIcon />}
           pagination={false} // explicitly off
         />

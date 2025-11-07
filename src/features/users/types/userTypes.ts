@@ -1,3 +1,37 @@
+export type ProfileType = {
+  firstName: string;
+  lastName: string;
+  avatar: string;
+  gender: string;
+  maritalStatus: string;
+  children: number;
+  typeOfResidence: string;
+};
+
+export type EducationType = {
+  level: string;
+  employmentStatus: string;
+  sector: string;
+  officeEmail: string;
+  monthlyIncome: string[];
+  loanRepayment: string;
+  duration: string;
+};
+
+export type SocialsType = {
+  twitter: string;
+  facebook: string;
+  instagram: string;
+};
+
+export type GuarantorType = {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  relationship: string;
+};
+
 export type UserType = {
   id: string;
   organisation: string;
@@ -6,6 +40,10 @@ export type UserType = {
   phoneNumber: string;
   dateJoined: string;
   status: string;
+  profile: ProfileType;
+  education: EducationType;
+  socials: SocialsType;
+  guarantor: GuarantorType[];
 };
 
 export type UsersSummaryType = {
