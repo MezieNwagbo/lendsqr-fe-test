@@ -45,7 +45,7 @@ export type UserType = {
   education: EducationType;
   socials: SocialsType;
   guarantor: GuarantorType[];
-  userTier: string;
+  userTier: number;
   bvn: string;
 };
 

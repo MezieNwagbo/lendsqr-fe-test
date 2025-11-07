@@ -1,10 +1,10 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-interface SidebarContextType {
+type SidebarContextType = {
   isOpen: boolean;
   toggleSidebar: () => void;
   closeSidebar: () => void;
-}
+};
 
 const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 

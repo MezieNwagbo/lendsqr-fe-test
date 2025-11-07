@@ -4,9 +4,7 @@ import "./SearchInput.scss";
 import searchIcon from "../../assets/images/navbar/search_icon.svg";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** Called when the search button is clicked or Enter is pressed */
   onSearch?: (value: string) => void;
-  /** Optional placeholder text */
   placeholder?: string;
 }
 

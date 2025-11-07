@@ -1,30 +1,28 @@
 import "./userTable.scss";
-import { useEffect } from "react";
-import DataTable, { type TableColumn } from "react-data-table-component";
-import KebabMenu from "../../../../components/kebabMenu/KebabMenu";
-import TablePagination from "../../../../components/tablePagination/TablePagination";
-import { formatDate } from "../../../../utils/formatter";
 
-import { useNavigate } from "react-router-dom";
-
-import viewIcon from "../../../../assets/images/users/view_icon.svg";
-import activateIcon from "../../../../assets/images/users/activate_icon.svg";
-import blacklistIcon from "../../../../assets/images/users/blacklist_icon.svg";
-
-import useUserTable from "../../hooks/useUserTable";
-import { useUserNavigation } from "../../hooks/useUserNavigation";
-
-import FilterDropdown from "../filterDropdown/FilterDropdown";
 import type { UserType } from "../../types/userTypes";
 
-interface UserTableProps {
+import { useEffect } from "react";
+import { useUserNavigation } from "../../hooks/useUserNavigation";
+import useUserTable from "../../hooks/useUserTable";
+import useUserTableColumns from "../../hooks/useUserTableColumns";
+
+import DataTable from "react-data-table-component";
+
+import TablePagination from "../../../../components/tablePagination/TablePagination";
+import FilterDropdown from "../filterDropdown/FilterDropdown";
+
+import { userTableStyle } from "./tableStyle";
+
+type UserTableProps = {
   users: UserType[];
   loading?: boolean;
-}
+};
 
 const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
-  const navigate = useNavigate();
   const { goToUserDetails } = useUserNavigation();
+  const { columns } = useUserTableColumns();
+
   const {
     paginatedUsers,
     handleChangePage,
@@ -59,73 +57,11 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
     </div>
   );
 
-  // Table column definitions
-  const columns: TableColumn<UserType>[] = [
-    {
-      name: "ORGANIZATION",
-      selector: (row) => row.organisation,
-      sortable: true,
-    },
-    { name: "USERNAME", selector: (row) => row.username, sortable: true },
-    {
-      name: "EMAIL",
-      selector: (row) => row.email,
-      sortable: true,
-      grow: 2,
-    },
-    { name: "PHONE NUMBER", selector: (row) => row.phoneNumber },
-    {
-      name: "DATE JOINED",
-      selector: (row) => formatDate(row.dateJoined),
-      sortable: true,
-    },
-    {
-      name: "STATUS",
-      cell: (row) => (
-        <span className={`status-badge status-${row.status.toLowerCase()}`}>
-          {row.status}
-        </span>
-      ),
-    },
-    {
-      name: "",
-      cell: (row) => (
-        <KebabMenu
-          options={[
-            {
-              label: "View Details",
-              icon: viewIcon,
-              onClick: (user) => goToUserDetails(user),
-            },
-            { label: "Blacklist User", icon: blacklistIcon },
-            { label: "Activate User", icon: activateIcon },
-          ]}
-          row={row}
-        />
-      ),
-      width: "70px",
-      button: true,
-    },
-  ];
-
-  const userTableStyle = {
-    headRow: {
-      style: { borderBottom: "0px solid rgba(0,0,0,0)!important" },
-    },
-    rows: {
-      style: {
-        border: "none !important",
-        borderTop: "1px solid rgba(33, 63, 125, 0.1) !important",
-      },
-    },
-  };
-
   return (
     <>
       <div className="user-table">
         <DataTable
           columns={columns}
-          // ✅ Use paginatedUsers instead of full users array
           data={paginatedUsers}
           progressPending={loading}
           customStyles={userTableStyle}
@@ -137,7 +73,6 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
         />
       </div>
 
-      {/* ✅ External pagination below table */}
       <TablePagination
         rowsPerPage={rowsPerPage}
         rowCount={rowCount}
