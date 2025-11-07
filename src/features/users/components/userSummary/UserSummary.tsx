@@ -16,7 +16,7 @@ type SummaryCardProps = {
 const SummaryCard: React.FC<SummaryCardProps> = ({ title, value, icon }) => {
   return (
     <div className="summary-card">
-      {icon && <img src={icon} alt={title} className="summary-card__icon" />}
+      {icon && <img src={icon} alt="icon" className="summary-card__icon" />}
       <p className="summary-card__title">{title}</p>
       <h3 className="summary-card__value">{value}</h3>
     </div>
