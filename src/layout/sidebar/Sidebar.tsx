@@ -1,6 +1,9 @@
+import "./Sidebar.scss";
+
+import useLogout from "../../features/auth/hooks/useLogout";
+
 import { NavLink } from "react-router-dom";
 import { sidebarData } from "../../data/sidebarData";
-import "./Sidebar.scss";
 import { useSidebar } from "../../context/SidebarContext";
 
 import DashboardIcon from "../../assets/images/sidebarMenu/dashboard_icon.svg";
@@ -9,6 +12,7 @@ import logoutIcon from "../../assets/images/sidebarMenu/logout_icon.svg";
 
 const Sidebar = () => {
   const { closeSidebar } = useSidebar();
+  const { handleLogout } = useLogout();
   return (
     <aside className="sidebar">
       {/* Switch org  */}
@@ -74,7 +78,7 @@ const Sidebar = () => {
       </ul>
       <hr />
       <div className="sidebar__logout">
-        <button>
+        <button onClick={handleLogout}>
           <span>
             <img src={logoutIcon} alt="logout_icon" />
           </span>

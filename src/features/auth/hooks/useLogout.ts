@@ -1,7 +1,13 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const useLogout = () => {
-  const handleLogout = () => {};
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("selectedUser");
+    localStorage.removeItem("lendsqrAuth");
+    navigate("/login");
+  };
 
   return { handleLogout };
 };
