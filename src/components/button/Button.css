@@ -100,7 +100,7 @@ html {
   transition: background-color 0.2s ease;
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: rgb(185.4, 194.3230769231, 208.6);
+  background: rgb(47.5403225806, 188.2596774194, 187.3088709677);
 }
 
 /* Firefox support */
@@ -151,7 +151,7 @@ body {
   color: #fff;
 }
 .btn--primary:hover:not(:disabled) {
-  background-color: rgb(42.5403225806, 168.4596774194, 167.6088709677);
+  background-color: rgb(47.5403225806, 188.2596774194, 187.3088709677);
 }
 .btn--primary-outline {
   background-color: #fff;
@@ -167,7 +167,7 @@ body {
   color: #fff;
 }
 .btn--danger:hover:not(:disabled) {
-  background-color: rgb(187.7298701299, 2.4701298701, 48.5792207792);
+  background-color: rgb(209.76, 2.76, 54.28);
 }
 .btn--danger-outline {
   background-color: #fff;

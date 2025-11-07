@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "mixins" as *;
+@use "sass:color";
 
 html {
   box-sizing: border-box;
@@ -41,7 +42,7 @@ html {
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: darken(#d8dde5, 10%);
+    background: color.scale($color-brand-teal, $lightness: -10%);
   }
 }
 
