@@ -70,7 +70,12 @@ const UserTable: React.FC<UserTableProps> = ({ users, loading }) => {
       sortable: true,
     },
     { name: "USERNAME", selector: (row) => row.username, sortable: true },
-    { name: "EMAIL", selector: (row) => row.email, sortable: true, grow: 2 },
+    {
+      name: "EMAIL",
+      selector: (row) => row.email,
+      sortable: true,
+      grow: 2,
+    },
     { name: "PHONE NUMBER", selector: (row) => row.phoneNumber },
     {
       name: "DATE JOINED",

@@ -125,15 +125,24 @@ body {
   padding: 0 16px;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(2.5px);
-  animation: fadeInUp 0.4s ease-in forwards;
+.user-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}/*# sourceMappingURL=Users.css.map */
+.user-skeleton__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 12px;
+}
+.user-skeleton__card {
+  flex: 1;
+  min-width: 220px;
+  background-color: #f8f9fe;
+}
+.user-skeleton__table {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fe;
+}/*# sourceMappingURL=UserSkeleton.css.map */

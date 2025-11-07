@@ -12,8 +12,6 @@ const TablePagination: React.FC<PaginationComponentProps> = ({
   currentPage,
 }) => {
   const totalPages = Math.ceil(rowCount / rowsPerPage);
-  const start = (currentPage - 1) * rowsPerPage + 1;
-  const end = Math.min(currentPage * rowsPerPage, rowCount);
 
   // 🧮 Helper: Generate visible page numbers
   const generatePageNumbers = () => {
@@ -55,7 +53,7 @@ const TablePagination: React.FC<PaginationComponentProps> = ({
 
   return (
     <div className="pagination">
-      <p className="pagination__info">
+      <div className="pagination__info">
         Showing{" "}
         <div className="pagination__pages">
           <select
@@ -73,7 +71,7 @@ const TablePagination: React.FC<PaginationComponentProps> = ({
           </select>
         </div>{" "}
         out of {rowCount}
-      </p>
+      </div>
 
       <div className="pagination__controls">
         <button
