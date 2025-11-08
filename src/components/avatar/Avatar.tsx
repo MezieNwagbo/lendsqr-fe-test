@@ -4,7 +4,7 @@ import "./Avatar.scss";
 type AvatarProps = {
   src?: string;
   alt?: string;
-  name?: string;
+  name: string;
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
 };

@@ -22,9 +22,9 @@ const Hamburger: React.FC<HamburgerProps> = ({
       aria-label="Toggle menu"
       style={{ width: size, height: size }}
     >
-      <span className="hamburger__line"></span>
-      <span className="hamburger__line"></span>
-      <span className="hamburger__line"></span>
+      <span role="presentation" className="hamburger__line"></span>
+      <span role="presentation" className="hamburger__line"></span>
+      <span role="presentation" className="hamburger__line"></span>
     </button>
   );
 };
