@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 ## Features
 
 - **Authentication:** Functional login flow with input validation and error handling.
-- **Users Dashboard:** Paginated user table with sorting, filtering, and responsive layout.
+- **Users Dashboard:** Paginated user table with sorting, and responsive layout.
 - **User Details Page:** Displays detailed user information with dynamic sections.
 - **Reusable Components:** Shared UI building blocks (`Button`, `Input`, `TablePagination`, etc.).
 - **Hooks & Utilities:** Custom React hooks (`useLogin`, `useUserTable`, `useUserNavigation`) for logic encapsulation.
