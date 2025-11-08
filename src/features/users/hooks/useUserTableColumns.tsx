@@ -9,7 +9,7 @@ import blacklistIcon from "../../../assets/images/users/blacklist_icon.svg";
 
 import KebabMenu from "../../../components/kebabMenu/KebabMenu";
 
-import { useUserNavigation } from "./useUserNavigation";
+import { useUserNavigation } from "./useUserNavigation/useUserNavigation";
 
 const useUserTableColumns = () => {
   const { goToUserDetails } = useUserNavigation();

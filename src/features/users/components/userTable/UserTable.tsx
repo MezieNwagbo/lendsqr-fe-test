@@ -3,8 +3,8 @@ import "./UserTable.scss";
 import type { UserType } from "../../types/userTypes";
 
 import { useEffect } from "react";
-import { useUserNavigation } from "../../hooks/useUserNavigation";
-import useUserTable from "../../hooks/useUserTable";
+import { useUserNavigation } from "../../hooks/useUserNavigation/useUserNavigation";
+import useUserTable from "../../hooks/useUserTable/useUserTable";
 import useUserTableColumns from "../../hooks/useUserTableColumns";
 
 import DataTable from "react-data-table-component";

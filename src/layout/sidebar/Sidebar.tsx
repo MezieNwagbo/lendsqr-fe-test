@@ -1,6 +1,6 @@
 import "./Sidebar.scss";
 
-import useLogout from "../../features/auth/hooks/useLogout";
+import useLogout from "../../features/auth/hooks/useLogout/useLogout";
 
 import { NavLink } from "react-router-dom";
 import { sidebarData } from "../../data/sidebarData";

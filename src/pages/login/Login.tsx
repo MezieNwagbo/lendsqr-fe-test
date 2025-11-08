@@ -1,6 +1,6 @@
 import "./Login.scss";
 import { useState, useEffect } from "react";
-import { useLogin } from "../../features/auth/hooks/useLogin";
+import { useLogin } from "../../features/auth/hooks/useLogin/useLogin";
 import logo from "../../assets/images/shared/logo_with_text.svg";
 
 import { Link } from "react-router-dom";

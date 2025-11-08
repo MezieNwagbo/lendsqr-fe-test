@@ -11,9 +11,8 @@ describe("TablePagination Component", () => {
     onChangeRowsPerPage = vi.fn();
   });
 
-  // -------------------------
   // Positive scenario: basic rendering
-  // -------------------------
+
   it("renders pagination info and page numbers correctly", () => {
     render(
       <TablePagination

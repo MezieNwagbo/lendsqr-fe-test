@@ -51,7 +51,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       <form className="filter-dropdown__content">
         <div className="filter-group">
           <label htmlFor="status">Organization</label>
-          <select id="status">
+          <select id="organization">
             <option value="">Select</option>
             {organizationData.map((org) => (
               <option value={org} key={org}>
@@ -70,7 +70,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
         </div>
         <div className="filter-group">
           <label htmlFor="date">Date</label>
-          <input type="date" />
+          <input type="date" id="date" />
         </div>
         <div className="filter-group">
           <label htmlFor="status">Status</label>

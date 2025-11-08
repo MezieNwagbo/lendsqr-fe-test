@@ -32,22 +32,30 @@ const SummaryInfoTab = ({ user }: Props) => {
 
         {/* User basic info */}
         <div className="summary-info__item">
-          <h2 className="item-title">{username}</h2>
-          <p className="item-id">{userId}</p>
+          <h2 className="item-title" data-testid="username-heading">
+            {username}
+          </h2>
+          <p className="item-id" data-testid="userId">
+            {userId}
+          </p>
         </div>
-
-        <hr className="line" aria-hidden="true" />
 
         {/* User tier */}
         <div className="summary-info__item user-tier">
-          <p className="item-users-tier">User Tier</p>
+          <p className="item-users-tier" data-testid="user-tier-label">
+            User Tier
+          </p>
           <Ratings tier={Number(userTier)} />
         </div>
 
         {/* Account info */}
         <div className="summary-info__item margin-top">
-          <h3 className="item-title">{education.loanRepayment}.00</h3>
-          <p className="item-bank-detail">993e34343/providus</p>
+          <h3 className="item-title" data-testid="loan-repayment">
+            {education.loanRepayment}.00
+          </h3>
+          <p className="item-bank-detail" data-testid="bank-detail">
+            993e34343/providus
+          </p>
         </div>
       </div>
 
