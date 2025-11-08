@@ -27,7 +27,7 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirect root to login or dashboard */}
+        {/* Redirect root to login*/}
         <Route path="/" element={<Navigate to="/login" />} />
 
         <Route path="/login" element={<Login />} />
@@ -50,7 +50,7 @@ const AppRouter = () => {
         )}
 
         {/* fallback */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/users" />} />
       </Routes>
     </Router>
   );
