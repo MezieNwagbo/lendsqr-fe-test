@@ -3,7 +3,7 @@ import "./Users.scss";
 import React from "react";
 import UserSummary from "../../features/users/components/userSummary/UserSummary";
 import UserTable from "../../features/users/components/userTable/UserTable";
-import { useUsers } from "../../features/users/hooks/useUsers";
+import { useUsers } from "../../features/users/hooks/useUsers/useUsers";
 
 import UserSkeleton from "../../features/users/components/userSkeleton/UserSkeleton";
 

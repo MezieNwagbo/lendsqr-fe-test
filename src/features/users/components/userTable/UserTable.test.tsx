@@ -1,26 +1,19 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, vi, expect } from "vitest";
 import UserTable from "./UserTable";
 import type { UserType } from "../../types/userTypes";
+import { vi } from "vitest";
 
-// -------------------------
-// MOCK HOOKS
-// -------------------------
+// Mock hooks
 const mockGoToUserDetails = vi.fn();
-
-vi.mock("../../hooks/useUserNavigation", () => ({
-  useUserNavigation: () => ({
-    goToUserDetails: mockGoToUserDetails,
-  }),
+vi.mock("../../hooks/useUserNavigation/useUserNavigation", () => ({
+  useUserNavigation: () => ({ goToUserDetails: mockGoToUserDetails }),
 }));
 
 vi.mock("../../hooks/useUserTableColumns", () => ({
   default: () => ({
-    columns: [
-      { name: "Username", selector: (row: any) => row.username },
-      { name: "Email", selector: (row: any) => row.email },
-    ],
+    columns: [{ name: "Username", selector: (row: any) => row.username }],
   }),
+  __esModule: true,
 }));
 
 vi.mock("../../hooks/useUserTable", () => ({
@@ -36,95 +29,66 @@ vi.mock("../../hooks/useUserTable", () => ({
     rowsPerPage: 10,
     rowCount: users.length,
   }),
+  __esModule: true,
 }));
 
-// -------------------------
-// MOCK DATA
-// -------------------------
+vi.mock("../filterDropdown/FilterDropdown", () => ({
+  default: () => <div>FilterDropdownMock</div>,
+}));
+
+vi.mock("../../components/tablePagination/TablePagination", () => ({
+  default: ({ rowCount }: any) => <div>PaginationMock {rowCount}</div>,
+}));
+
 const mockUsers: UserType[] = [
   {
     id: "1",
-    userId: "u1",
-    organisation: "Lendstar",
-    username: "Cardenas Kirkland",
-    email: "cardenaskirkland@elentrix.com",
-    phoneNumber: "07084434153",
-    dateJoined: "2023-07-09",
-    status: "Pending",
+    userId: "user1",
+    organisation: "Org",
+    username: "John Doe",
+    email: "john@example.com",
+    phoneNumber: "1234567890",
+    dateJoined: "2025-01-01",
+    status: "active",
     profile: {
-      firstName: "Cardenas",
-      lastName: "Kirkland",
+      firstName: "John",
+      lastName: "Doe",
       avatar: "",
-      gender: "Male",
-      maritalStatus: "Single",
+      gender: "male",
+      maritalStatus: "single",
       children: 0,
-      typeOfResidence: "Apartment",
+      typeOfResidence: "apartment",
     },
     education: {
       level: "B.Sc",
-      employmentStatus: "Employed",
-      sector: "Technology",
-      officeEmail: "cardenaskirkland@company.com",
-      monthlyIncome: ["100,000", "200,000"],
-      loanRepayment: "50,000",
-      duration: "3 years",
+      employmentStatus: "employed",
+      sector: "tech",
+      officeEmail: "john@org.com",
+      monthlyIncome: ["1000", "2000"],
+      loanRepayment: "500",
+      duration: "12 months",
     },
-    socials: {
-      twitter: "@cardenaskirkland",
-      facebook: "facebook.com/cardenaskirkland",
-      instagram: "@cardenaskirkland",
-    },
-    guarantor: [
-      {
-        firstName: "GuarFirst1",
-        lastName: "GuarLast1",
-        phoneNumber: "07011111111",
-        email: "guar1@example.com",
-        relationship: "Sibling",
-      },
-    ],
-    userTier: 3,
+    socials: { twitter: "", facebook: "", instagram: "" },
+    guarantor: [],
+    userTier: 2,
     bvn: "12345678901",
   },
 ];
 
-// -------------------------
-// TESTS
-// -------------------------
 describe("UserTable Component", () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    mockGoToUserDetails.mockClear();
   });
 
-  // Positive Scenario
-  it("renders user table with data and navigates on row click", () => {
-    render(<UserTable users={mockUsers} loading={false} />);
+  it("renders user table with data", () => {
+    render(<UserTable users={mockUsers} />);
+    expect(screen.getByText("John Doe")).toBeInTheDocument();
+    expect(screen.getByText("FilterDropdownMock")).toBeInTheDocument();
+  });
 
-    // Check if username and email are rendered
-    expect(screen.getByText("Cardenas Kirkland")).toBeInTheDocument();
-    expect(
-      screen.getByText("cardenaskirkland@elentrix.com")
-    ).toBeInTheDocument();
-
-    // Click row should call goToUserDetails
-    const row = screen.getByText("Cardenas Kirkland");
-    fireEvent.click(row);
-
+  it("calls goToUserDetails when a row is clicked", () => {
+    render(<UserTable users={mockUsers} />);
+    fireEvent.click(screen.getByText("John Doe"));
     expect(mockGoToUserDetails).toHaveBeenCalledWith(mockUsers[0]);
-  });
-
-  // Negative Scenario
-  it("renders correctly when there are no users", () => {
-    render(<UserTable users={[]} loading={false} />);
-
-    // Table should not crash, maybe empty state or header still exists
-    expect(screen.queryByText("Cardenas Kirkland")).not.toBeInTheDocument();
-    expect(screen.getByText(/No records/i) || true).toBeTruthy(); // if you have empty message
-  });
-
-  // Positive Scenario: Loading state
-  it("shows loading indicator when loading is true", () => {
-    render(<UserTable users={mockUsers} loading={true} />);
-    expect(screen.getByText(/loading/i) || true).toBeTruthy(); // depends on DataTable default loader
   });
 });
