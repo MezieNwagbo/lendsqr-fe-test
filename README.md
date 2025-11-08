@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# Lendsqr FE Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An implementation of the **Lendsqr login**, **users list**, and **user details** pages — built with modern React tooling, strong TypeScript typing, and a clean component-driven architecture.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** https://chimezie-nwagbo-lendsqr-fe-test.vercel.app  
+**GitHub Repo:** https://github.com/MezieNwagbo/lendsqr-fe-test
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Authentication:** Functional login flow with input validation and error handling.
+- **Users Dashboard:** Paginated user table with sorting, filtering, and responsive layout.
+- **User Details Page:** Displays detailed user information with dynamic sections.
+- **Reusable Components:** Shared UI building blocks (`Button`, `Input`, `TablePagination`, etc.).
+- **Hooks & Utilities:** Custom React hooks (`useLogin`, `useUserTable`, `useUserNavigation`) for logic encapsulation.
+- **State & Effects:** Managed with `useState`, `useEffect`, and clean side-effect boundaries.
+- **Testing:** Comprehensive unit tests using **Vitest** and **React Testing Library**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧰 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Category          | Tools                                                                                                                  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Framework**     | [React 19](https://react.dev) + [TypeScript 5.9](https://www.typescriptlang.org/)                                      |
+| **Build Tool**    | [Vite 7](https://vitejs.dev)                                                                                           |
+| **Routing**       | [React Router DOM 7](https://reactrouter.com/)                                                                         |
+| **Styling**       | [SASS/SCSS](https://sass-lang.com/)                                                                                    |
+| **UI Library**    | [Material UI (MUI)](https://mui.com/) + custom SCSS components                                                         |
+| **Tables**        | [react-data-table-component](https://www.npmjs.com/package/react-data-table-component)                                 |
+| **Notifications** | [react-hot-toast](https://react-hot-toast.com/)                                                                        |
+| **Testing**       | [Vitest](https://vitest.dev/), [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) |
+| **Linting**       | ESLint + TypeScript ESLint                                                                                             |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Project Structure
+
+src/
+┣ assets/ # Images and icons
+┣ components/ # Shared UI components (Button, Input, TablePagination, etc.)
+┣ constants/ # Static copy and app-wide constants
+┣ context/ # Context providers (if applicable)
+┣ data/ # Mock or static JSON data
+┣ features/ # Feature-based modules (e.g. auth)
+┣ layout/ # Layout and wrapper components
+┣ pages/ # Page-level components (Login, Users, UserDetails)
+┣ routes/ # Route definitions and protected routes
+┣ styles/ # Global SCSS styles
+┣ types/ # TypeScript type definitions
+┣ App.tsx
+┗ main.tsx
+
+This modular structure follows **feature-based separation** for scalability and maintainability.
+
+---
+
+## 🧪 Testing
+
+Unit and integration tests are written using **Vitest** + **React Testing Library**.
+
+### Example Tests
+
+- `Button.test.tsx`: ensures correct rendering and onClick behavior
+- `UserSummary.test.tsx`: verifies summary stats are displayed
+- `useLogin.test.ts`: mocks API + verifies success and failure flows
+- `Login.test.tsx`: ensures form validation and navigation logic work
+
+### Run Tests
+
+```bash
+# Run all tests
+npm run test
+
+# Run in watch mode
+npm run test:watch
+
+# Generate coverage report
+npm run test:coverage
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation and setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Clone the repo
+git clone https://github.com/MezieNwagbo/lendsqr-fe-test.git
+cd lendsqr-fe-test
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# install dependencies
+npm install
+
+# run locally
+npm run dev
 ```
+
+The app will be available at http://localhost:5173
+
+## Notes for reviewers
+
+This project follows clean code conventions:
+
+- Commits are atomic and descriptive.
+- Components are modular and reusable.
+- Codebase includes unit tests for critical paths.
+- Uses modern React 19 patterns (no legacy APIs).
