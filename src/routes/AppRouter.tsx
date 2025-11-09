@@ -27,8 +27,11 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        {/* Redirect root to login*/}
-        <Route path="/" element={<Navigate to="/login" />} />
+        {/* Redirect root to login or dashboard */}
+        <Route
+          path="/"
+          element={isAuth ? <Navigate to="/users" /> : <Navigate to="/login" />}
+        />
 
         <Route path="/login" element={<Login />} />
 
@@ -50,7 +53,7 @@ const AppRouter = () => {
         )}
 
         {/* fallback */}
-        <Route path="*" element={<Navigate to="/users" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

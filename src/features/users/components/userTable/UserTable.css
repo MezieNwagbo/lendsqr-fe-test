@@ -133,6 +133,10 @@ body {
   padding: 1rem;
   overflow-x: auto;
 }
+.user-table p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .user-table .rdt_TableHead {
   background-color: #f9fafc;
   font-weight: 600;

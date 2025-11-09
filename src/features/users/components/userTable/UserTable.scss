@@ -8,6 +8,11 @@
   padding: 1rem;
   overflow-x: auto;
 
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .rdt_TableHead {
     background-color: #f9fafc;
     font-weight: $font-weight-semibold;
